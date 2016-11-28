@@ -1,9 +1,9 @@
 site:
-    titre: "Xnova"
+    titre: "Forum"
     sous_titre: "Jeux de gestion spatiale"
     connexion_titre: "Connexion"
     enregistrement_titre: "S'enregistrer"
-    enregistrement_sous_titre: "Jeux de gestion spatiale"
+    enregistrement_sous_titre: "Description ............"
     reinitialisation_titre: "Mot de passe oublié"
 connexion:
     email: "E-Mail"
