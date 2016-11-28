@@ -1,3 +1,11 @@
-app:
-    resource: "@AppBundle/Controller/"
+board:
+    resource: "@BoardBundle/Controller/"
     type:     annotation
+    prefix:   /forum/
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
