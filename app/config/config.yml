@@ -12,7 +12,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -38,7 +38,19 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
+    # variables global
+    globals:
+        META_ENCODAGE: utf-8
+        META_LANGAGE: fr
+        META_AUTHOR: mandalorien
+        META_COPYRIGHT: mandalorien
+        META_DESCRIPTION: Plateform forum.
+        META_KEYWORDS: Plateform,cms,forum
+        META_SUBJECT: Plateform forum
+        VERSION: 0.0.1
+        DATE_VERSION: 2016
+        NAME_SITE: forum
+        CONTACT_WEBSITE: mandalorien.wootook@gmail.com
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -68,3 +80,12 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UserBundle\Entity\Users
