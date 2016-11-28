@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<!-- Cette page est valide W3C -->
+	<!-- Debut du head -->
+	<head>
+		<!-- Title de la page -->
+		<title>{% block title %}{{NAME_SITE}} {% endblock %}</title>
+			<link rel="shortcut icon" href="favicon.ico"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta content="text/html; charset={{META_ENCODAGE}}" http-equiv="Content-Type" />
+			<meta content="{{META_LANGAGE}}" http-equiv="Content-language"/>
+			<meta content="{{META_AUTHOR}}" name="author"/>
+			<meta content="{{META_COPYRIGHT}}" name="copyright"/>
+			<meta content="{{META_DESCRIPTION}}" name="description"/>
+			<meta content="{{META_KEYWORDS}}" name="keywords"/>
+			<meta content="never" name="Expires"/>
+			<meta content="Tous public" name="rating"/>
+			<meta content="{{META_SUBJECT}}" name="subject"/>
+		{% stylesheets filter="cssrewrite"
+			"bundles/user/css/bootstrap.min.css"
+			"bundles/user/css/core.css"
+			"bundles/user/css/components.css"
+			"bundles/user/css/icons.css"
+			"bundles/user/css/pages.css"
+			"bundles/user/css/menu.css"
+			"bundles/user/css/responsive.css"
+		%}
+			<link rel="stylesheet" href="{{ asset_url }}"/>
+			{% endstylesheets %}
+			{% javascripts
+			"@UserBundle/Resources/public/js/modernizr.min.js"
+			%}
+			<script src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+	</head>
+	<body>
+	{% block content %}
+	{% endblock %}
+	<script>
+		var resizefunc = [];
+	</script>
+	<!-- jQuery  -->
+	{% javascripts
+		"@UserBundle/Resources/public/js/jquery.min.js"
+		"@UserBundle/Resources/public/js/bootstrap.min.js"
+		"@UserBundle/Resources/public/js/detect.js"
+		"@UserBundle/Resources/public/js/fastclick.js"
+		"@UserBundle/Resources/public/js/jquery.slimscroll.js"
+		"@UserBundle/Resources/public/js/jquery.blockUI.js"
+		"@UserBundle/Resources/public/js/waves.js"
+		"@UserBundle/Resources/public/js/wow.min.js"
+		"@UserBundle/Resources/public/js/jquery.nicescroll.js"
+		"@UserBundle/Resources/public/js/jquery.scrollTo.min.js"
+		"@UserBundle/Resources/public/js/jquery.core.js"
+		"@UserBundle/Resources/public/js/jquery.app.js"
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+	</body>
+</html>
